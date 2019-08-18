@@ -26,3 +26,9 @@ Options:
 ```
 ~$ ./roll.sh d2
 ```
+
+- Roll 5d2, 4d8 and 1d20:
+
+```
+~$ ./roll.sh 5d2 4d8 d20
+```
