@@ -11,13 +11,13 @@
 #/
 #/ Examples:
 #/   \e[32m- Roll 3d20:\e[0m
-#/     ~$ ./roll.sh \e[33m3d20\e[0m
+#/     $ ./roll.sh \e[33m3d20\e[0m
 #/
 #/   \e[32m- Roll 1d2:\e[0m
-#/     ~$ ./roll.sh \e[33md2\e[0m
+#/     $ ./roll.sh \e[33md2\e[0m
 #/
 #/   \e[32m- Roll 5d2, 4d8 and 1d20:\e[0m
-#/     ~$ ./roll.sh \e[33m5d2 4d8 d20\e[0m
+#/     $ ./roll.sh \e[33m5d2 4d8 d20\e[0m
 
 set -e
 set -u
@@ -36,7 +36,7 @@ set_var() {
     n=0
     s=0
     for dice in "$@"; do
-        if [[ "$dice" =~ ^([[:digit:]])?+d[[:digit:]]+$ ]]; then
+        if [[ "$dice" =~ ^([[:digit:]])*d[[:digit:]]+$ ]]; then
             n=${dice%d*}
             s=${dice#*d}
             if [[ -z "$n" || "$n" == 0 ]]; then
